@@ -9,7 +9,7 @@ import java.io.IOException;
 public class ConfigurationManager {
     private static ConfigurationManager instance;
     private final Properties configProperties;
-    private final String basePath = "/mqtt-iot-communication/src/main/java/resources/config.properties";
+    private final String basePath = "/src/main/java/resources/config.properties";
 
     private ConfigurationManager() {
         configProperties = new Properties();
