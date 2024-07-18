@@ -1,18 +1,10 @@
-#### Titre du projet
-```
 # Projet IoT Communication
-```
 
-#### Description
-```
 ## Description
-Ce projet est une application Java pour la gestion de la configuration et la communication via MQTT pour des capteurs IoT (avec l'exemple d'un cpateur de position).
-```
+Ce projet est une application Java pour la gestion de la configuration et la communication via MQTT pour des capteurs IoT (utilisation de capteur position pour l'exemple) .
 
-#### Structure du projet
-```
 ## Structure du projet
-```
+
 ```
 .
 ├── pom.xml
@@ -60,25 +52,22 @@ Ce projet est une application Java pour la gestion de la configuration et la com
 │                               └── Utils.java
 ```
 
-#### Installation
-```
 ## Installation
-1. Clonez le dépôt : git clone https://github.com/lamine-f/mqtt-iot-communication.git
+
+1. Clonez le dépôt : `git clone https://github.com/lamine-f/mqtt-iot-communication.git`
 2. Naviguez vers le dossier du projet : `cd mqtt-iot-communication`
 3. Compilez le projet avec Maven : `mvn clean install`
-```
 
-#### Utilisation
-```
 ## Utilisation
+
 1. Exécutez l'application principale : `java -jar target/<NOM_DU_JAR>.jar`
 2. Configurez les fichiers de configuration dans `src/main/resources/`
-```
 
-### Documentation des classes et des packages
+## Documentation des Classes et des Packages
 
-#### src/main/java/Main.java
-```
+### Main.java
+
+```java
 /**
  * Point d'entrée principal de l'application.
  */
@@ -89,8 +78,9 @@ public class Main {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/configfilemanager/ApplicationConfigurationFileManager.java
-```
+### configfilemanager/ApplicationConfigurationFileManager.java
+
+```java
 /**
  * Gère les configurations de l'application.
  */
@@ -99,8 +89,9 @@ public class ApplicationConfigurationFileManager {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/configfilemanager/ConfigurationFileManager.java
-```
+### configfilemanager/ConfigurationFileManager.java
+
+```java
 /**
  * Classe abstraite pour gérer les fichiers de configuration.
  */
@@ -109,8 +100,9 @@ public abstract class ConfigurationFileManager {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/configfilemanager/ConfigurationManagerFileStore.java
-```
+### configfilemanager/ConfigurationManagerFileStore.java
+
+```java
 /**
  * Gère le stockage des fichiers de configuration.
  */
@@ -119,8 +111,9 @@ public class ConfigurationManagerFileStore {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/configfilemanager/enums/ConfigurationManagerType.java
-```
+### configfilemanager/enums/ConfigurationManagerType.java
+
+```java
 /**
  * Énumération des types de gestionnaires de configuration.
  */
@@ -130,8 +123,9 @@ public enum ConfigurationManagerType {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/configfilemanager/exceptions/ConfigurationManagerTypeNotFoundException.java
-```
+### configfilemanager/exceptions/ConfigurationManagerTypeNotFoundException.java
+
+```java
 /**
  * Exception lancée lorsque le type de gestionnaire de configuration n'est pas trouvé.
  */
@@ -142,8 +136,9 @@ public class ConfigurationManagerTypeNotFoundException extends Exception {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/configfilemanager/MqttConfigurationFileManager.java
-```
+### configfilemanager/MqttConfigurationFileManager.java
+
+```java
 /**
  * Gère les configurations MQTT.
  */
@@ -152,8 +147,9 @@ public class MqttConfigurationFileManager {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/clients/MqttPositionSensorClient.java
-```
+### mqttclient/clients/MqttPositionSensorClient.java
+
+```java
 /**
  * Client MQTT pour les capteurs de position.
  */
@@ -162,8 +158,9 @@ public class MqttPositionSensorClient {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/datas/Data.java
-```
+### mqttclient/datas/Data.java
+
+```java
 /**
  * Classe de base pour les données.
  */
@@ -172,8 +169,9 @@ public class Data {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/datas/Position.java
-```
+### mqttclient/datas/Position.java
+
+```java
 /**
  * Représente la position d'un capteur.
  */
@@ -182,8 +180,9 @@ public class Position {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/enums/DataType.java
-```
+### mqttclient/enums/DataType.java
+
+```java
 /**
  * Énumération des types de données.
  */
@@ -192,8 +191,9 @@ public enum DataType {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/exceptions/DataTypeNoExpected.java
-```
+### mqttclient/exceptions/DataTypeNoExpected.java
+
+```java
 /**
  * Exception lancée lorsque le type de données n'est pas celui attendu.
  */
@@ -204,8 +204,9 @@ public class DataTypeNoExpected extends Exception {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/exceptions/MqttClientManagerClientConnexionException.java
-```
+### mqttclient/exceptions/MqttClientManagerClientConnexionException.java
+
+```java
 /**
  * Exception lancée lorsque la connexion du client MQTT échoue.
  */
@@ -216,8 +217,9 @@ public class MqttClientManagerClientConnexionException extends Exception {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/exceptions/MqttClientManagerPortNotDefinedException.java
-```
+### mqttclient/exceptions/MqttClientManagerPortNotDefinedException.java
+
+```java
 /**
  * Exception lancée lorsque le port du client MQTT n'est pas défini.
  */
@@ -228,8 +230,9 @@ public class MqttClientManagerPortNotDefinedException extends Exception {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/exceptions/MqttClientManagerServerNotDefinedException.java
-```
+### mqttclient/exceptions/MqttClientManagerServerNotDefinedException.java
+
+```java
 /**
  * Exception lancée lorsque le serveur du client MQTT n'est pas défini.
  */
@@ -240,8 +243,9 @@ public class MqttClientManagerServerNotDefinedException extends Exception {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/messages/Message.java
-```
+### mqttclient/messages/Message.java
+
+```java
 /**
  * Classe de base pour les messages MQTT.
  */
@@ -250,8 +254,9 @@ public class Message {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/messages/PositionMessage.java
-```
+### mqttclient/messages/PositionMessage.java
+
+```java
 /**
  * Message représentant une position.
  */
@@ -260,8 +265,9 @@ public class PositionMessage extends Message {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/MqttGlobalClientImpl.java
-```
+### mqttclient/MqttGlobalClientImpl.java
+
+```java
 /**
  * Implémentation du client global MQTT.
  */
@@ -270,8 +276,9 @@ public class MqttGlobalClientImpl {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/mqttclient/MqttGlobalClient.java
-```
+### mqttclient/MqttGlobalClient.java
+
+```java
 /**
  * Interface pour le client global MQTT.
  */
@@ -280,8 +287,9 @@ public interface MqttGlobalClient {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/utils/FileManager.java
-```
+### utils/FileManager.java
+
+```java
 /**
  * Utilitaire pour la gestion des fichiers.
  */
@@ -290,8 +298,9 @@ public class FileManager {
 }
 ```
 
-#### src/main/java/sn/lord/iot/communication/utils/Utils.java
-```
+### utils/Utils.java
+
+```java
 /**
  * Classe utilitaire avec des méthodes d'aide.
  */
@@ -300,7 +309,8 @@ public class Utils {
 }
 ```
 
-### Exemple de fichier de configuration (config.properties)
+## Exemple de fichier de configuration (config.properties)
+
 ```
 # Fichier de configuration de l'application
 mqtt.server=localhost
