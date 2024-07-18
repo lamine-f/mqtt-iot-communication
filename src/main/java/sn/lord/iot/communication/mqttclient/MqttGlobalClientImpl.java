@@ -1,20 +1,22 @@
-package lord.dic1.communication.mqttclient;
+package sn.lord.iot.communication.mqttclient;
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+import sn.lord.iot.communication.mqttclient.messages.Message;
 
 
-public class MqttGlobalClientImpl extends MqttGlobalClient {
+public class MqttGlobalClientImpl implements MqttGlobalClient {
     private final MqttClient client;
     private final String broker;
-    public MqttGlobalClientImpl(String broker, String clientId) throws MqttException {
-        this.broker = broker;
-        this.client = new MqttClient(
-                this.broker,
-                clientId,
-                new MemoryPersistence()
-        );
-        this.connect();
+    public MqttGlobalClientImpl(String broker, String clientId) {
+        try {
+            this.broker = broker;
+            this.client = new MqttClient(this.broker, clientId, new MemoryPersistence());
+            this.connect();
+
+        }catch (MqttException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void connect () throws MqttException {
@@ -46,10 +48,7 @@ public class MqttGlobalClientImpl extends MqttGlobalClient {
         String json = message.toJson();
         MqttMessage mqttMessage = new MqttMessage(json.getBytes());
         mqttMessage.setQos(2);
-        System.out.println(mqttMessage);
         client.publish(topic, mqttMessage);
-
-        System.out.println("Message published");
     }
 
     public void subscribe(String topic) throws MqttException {

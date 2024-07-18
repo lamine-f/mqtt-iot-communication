@@ -1,4 +1,4 @@
-package lord.dic1.communication.mqttclient.exceptions;
+package sn.lord.iot.communication.mqttclient.exceptions;
 
 public class MqttClientManagerClientConnexionException extends Exception {
 public MqttClientManagerClientConnexionException(String message) {
