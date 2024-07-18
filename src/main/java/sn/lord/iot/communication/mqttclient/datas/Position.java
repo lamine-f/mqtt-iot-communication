@@ -1,20 +1,12 @@
-package lord.dic1.communication.datas;
+package sn.lord.iot.communication.mqttclient.datas;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import sn.lord.iot.communication.utils.Utils;
 
-import java.lang.reflect.Type;
 import java.util.Map;
 
-public class Position implements Data {
-    private static final Gson gson = new Gson();
+public class Position extends Data {
     private String longitude;
     private String latitude;
-
-    public static Data jsonParse(String jsonString) {
-        Type type = new TypeToken<Position>(){}.getType();
-        return Position.gson.fromJson(jsonString, type);
-    }
 
     public Position (String longitude, String latitude) {
         this.longitude = longitude;
@@ -39,7 +31,7 @@ public class Position implements Data {
 
     @Override
     public String toJson() {
-        return Position.gson.toJson(
+        return Utils.GSON.toJson(
                 Map.of(
                         "longitude", this.longitude,
                         "latitude", this.latitude
